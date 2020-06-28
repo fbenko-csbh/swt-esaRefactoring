@@ -13,13 +13,17 @@ public abstract class Erzeuger {
     }
 
     public void printBetriebsart() {
+        printKopfzeile();
+        System.out.printf("%-20s%s\n", "Betriebsart:", getBetriebsart());
+    }
+
+    public void printKopfzeile() {
         for(int i=0; i<33; i++) {System.out.printf("-");}
         System.out.println();
         System.out.println("*** Mein Bauernhof ***");
         System.out.println("---Detailsübersicht---");
         for(int i=0; i<33; i++) {System.out.printf("-");}
         System.out.println();
-        System.out.printf("%-20s%s\n", "Betriebsart:", getBetriebsart());
     }
 }
 
