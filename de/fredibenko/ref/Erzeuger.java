@@ -1,18 +1,18 @@
 package de.fredibenko.ref;
 
-public class Erzeuger {
+public abstract class Erzeuger {
 
     private String betriebsart;
-
-    public Erzeuger(String betriebsart) {
-        this.betriebsart = betriebsart;
-    }
 
     public String getBetriebsart() {
         return betriebsart;
     }
 
-      public void printBetriebsart() {
+    public void setBetriebsart(String betriebsart) {
+        this.betriebsart = betriebsart;
+    }
+
+    public void printBetriebsart() {
         for(int i=0; i<33; i++) {System.out.printf("-");}
         System.out.println();
         System.out.println("*** Mein Bauernhof ***");
@@ -23,4 +23,21 @@ public class Erzeuger {
     }
 }
 
+class Milchbetrieb extends Erzeuger {
+    Milchbetrieb() {
+        setBetriebsart("Milchbetrieb");
+    }
+}
+
+class Obstbauer extends Erzeuger {
+    Obstbauer() {
+        setBetriebsart("Obstbauer");
+    }
+}
+
+class Gaertner extends Erzeuger {
+    Gaertner() {
+        setBetriebsart("Gaertner");
+    }
+}
 
